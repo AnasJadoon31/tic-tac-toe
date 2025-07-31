@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
+@media (min-width: 768px) {
+    #game-board button {
+        width: 8rem;
+        height: 8rem;
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-board button {
+        width: 20vw;
+        height: 20vw;
+        font-size: 9vw;
+        padding: 0.25rem;
+    }
+}
+
 html {
     font-family: 'Roboto Slab', sans-serif;
     line-height: 1.5;
@@ -178,16 +195,24 @@ ol {
 }
 
 #game-board button {
-    width: 8rem;
-    height: 8rem;
+    width: 22vw; /* Scales with viewport width */
+    height: 22vw; /* Maintains square shape */
+    max-width: 8rem; /* Prevents it from getting too large on large screens */
+    max-height: 8rem;
+    min-width: 4rem; /* Prevents it from getting too small */
+    min-height: 4rem;
+
     border: none;
     background: #aca788;
     color: #3f3b00;
-    font-size: 5rem;
+    font-size: 10vw; /* Scales font size */
+    max-font-size: 5rem; /* Clamp not supported directly; handled in media queries below */
     cursor: pointer;
     font-family: 'Caprasimo', cursive;
-    padding: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
+
 
 #game-over {
     position: absolute;
